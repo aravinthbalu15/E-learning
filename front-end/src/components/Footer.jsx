@@ -1,131 +1,84 @@
 export default function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-slate-900 border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Top Section */}
+        <div className="grid gap-8 md:grid-cols-3">
+          {/* Brand */}
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">
-              EduFlow Enterprise
+            <h3 className="text-lg font-semibold text-white">
+              LearnSphere
             </h3>
-            <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-              EduFlow Enterprise enables organizations and professionals to
-              upskill through structured, analytics-driven digital learning.
+            <p className="mt-3 text-sm text-slate-400 leading-relaxed max-w-sm">
+              LearnSphere is an enterprise learning platform designed to help
+              professionals build real-world skills through structured,
+              outcome-driven courses.
             </p>
           </div>
 
+          {/* Platform Links */}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
               Platform
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-slate-600">
+            <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <button type="button" className="hover:text-slate-900">
+                <a href="/my-courses" className="text-slate-300 hover:text-white">
                   My Courses
-                </button>
+                </a>
               </li>
               <li>
-                <button type="button" className="hover:text-slate-900">
+                <a href="/courses" className="text-slate-300 hover:text-white">
                   Course Catalog
-                </button>
+                </a>
               </li>
               <li>
-                <button type="button" className="hover:text-slate-900">
+                <a href="/achievements" className="text-slate-300 hover:text-white">
                   Achievements
-                </button>
+                </a>
               </li>
               <li>
-                <button type="button" className="hover:text-slate-900">
-                  Corporate Training
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  Instructor Program
-                </button>
+                <a href="/notifications" className="text-slate-300 hover:text-white">
+                  Notifications
+                </a>
               </li>
             </ul>
           </div>
 
+          {/* Support & Legal */}
           <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
               Support
             </p>
-            <ul className="mt-4 space-y-3 text-sm text-slate-600">
+            <ul className="mt-4 space-y-3 text-sm">
               <li>
-                <button type="button" className="hover:text-slate-900">
+                <a href="/help" className="text-slate-300 hover:text-white">
                   Help Center
-                </button>
+                </a>
               </li>
               <li>
-                <button type="button" className="hover:text-slate-900">
-                  Contact Support
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  System Status
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  Learning Guidelines
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  Accessibility
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-xs font-semibold text-slate-500 uppercase tracking-[0.2em]">
-              Legal
-            </p>
-            <ul className="mt-4 space-y-3 text-sm text-slate-600">
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  Terms of Service
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
+                <a href="/privacy" className="text-slate-300 hover:text-white">
                   Privacy Policy
-                </button>
+                </a>
               </li>
               <li>
-                <button type="button" className="hover:text-slate-900">
-                  Cookie Policy
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  Data Protection
-                </button>
-              </li>
-              <li>
-                <button type="button" className="hover:text-slate-900">
-                  Compliance & Security
-                </button>
+                <a href="/terms" className="text-slate-300 hover:text-white">
+                  Terms of Service
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© 2026 EduFlow Enterprise Learning. All rights reserved.</p>
-          <div className="flex items-center gap-4">
-            <button type="button" className="hover:text-slate-700">
-              Privacy Policy
-            </button>
-            <button type="button" className="hover:text-slate-700">
-              Terms of Service
-            </button>
-            <button type="button" className="hover:text-slate-700">
-              Help Center
-            </button>
-          </div>
+        {/* Bottom Bar */}
+        <div className="mt-10 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-slate-500">
+            © 2026 LearnSphere. All rights reserved.
+          </p>
+
+          <p className="text-xs text-slate-500">
+            Built for real-world learning 🚀
+          </p>
         </div>
       </div>
     </footer>
