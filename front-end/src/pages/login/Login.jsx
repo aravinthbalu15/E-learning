@@ -40,7 +40,7 @@ export default function Login() {
       // Role-based redirect
       if (role === "admin") navigate("/admin/dashboard");
       else if (role === "manager") navigate("/manager/dashboard");
-      else navigate("/home");
+      else navigate("/");
 
     } catch (err) {
       toast.error(err.response?.data?.message || "Login failed");

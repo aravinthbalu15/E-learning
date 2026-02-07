@@ -101,7 +101,7 @@ export default function Navbar({
 
           <span className="hidden md:block w-px h-8 bg-slate-200" />
 
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <div className="relative">
               <div className="w-10 h-10 rounded-xl bg-amber-200 grid place-items-center text-amber-700 font-semibold">
                 D
@@ -112,7 +112,16 @@ export default function Navbar({
               <p className="text-sm font-semibold text-slate-900">Dineesh M</p>
               <p className="text-xs text-slate-400">Premium Learner</p>
             </div>
-          </div>
+          </div> */}
+          <div className="flex items-center gap-3">
+  <Link
+    to="/login"
+    className="px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition"
+  >
+    Sign In
+  </Link>
+</div>
+
         </div>
       </div>
     </header>
