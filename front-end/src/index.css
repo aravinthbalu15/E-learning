@@ -1,1 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Sora", "Segoe UI", sans-serif;
+    color: #0f172a;
+    background-color: #f8fafc;
+  }
+
+  #root {
+    min-height: 100vh;
+    width: 100%;
+  }
+}
