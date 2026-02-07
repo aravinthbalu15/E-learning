@@ -4,10 +4,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-lg font-semibold text-slate-900">EduCorp</h3>
+            <h3 className="text-lg font-semibold text-slate-900">
+              EduFlow Enterprise
+            </h3>
             <p className="text-sm text-slate-600 mt-3 leading-relaxed">
-              EduCorp enables organizations and professionals to upskill through
-              structured, analytics-driven digital learning.
+              EduFlow Enterprise enables organizations and professionals to
+              upskill through structured, analytics-driven digital learning.
             </p>
           </div>
 
@@ -112,7 +114,18 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>© 2026 EduCorp Enterprise Learning. All rights reserved.</p>
+          <p>© 2026 EduFlow Enterprise Learning. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <button type="button" className="hover:text-slate-700">
+              Privacy Policy
+            </button>
+            <button type="button" className="hover:text-slate-700">
+              Terms of Service
+            </button>
+            <button type="button" className="hover:text-slate-700">
+              Help Center
+            </button>
+          </div>
         </div>
       </div>
     </footer>

@@ -64,7 +64,7 @@ export default function Home() {
                   <CourseCard
                     status="IN PROGRESS"
                     title="Basics of Odoo CRM"
-                    description="Master customer relationship management with industry standard tools."
+                    description="Manage customers, track leads, automate sales pipelines, and improve conversion rates using Odoo CRM."
                     tags={["Business", "Analytics"]}
                     progress={75}
                     cta="Continue Learning"
@@ -77,7 +77,7 @@ export default function Home() {
                   <CourseCard
                     status="NEW"
                     title="Digital Marketing Mastery"
-                    description="A comprehensive guide to modern digital marketing strategies."
+                    description="Modern digital marketing covering SEO, social media, paid ads, analytics, and conversion optimization."
                     tags={["Marketing"]}
                     progress={0}
                     cta="Start Course"
@@ -90,7 +90,7 @@ export default function Home() {
                   <CourseCard
                     status="PAID CONTENT"
                     title="Enterprise Sales Strategy"
-                    description="Deep dive into enterprise-level sales funnels and negotiation tactics."
+                    description="Enterprise sales strategies, negotiation techniques, and long-cycle deal management for B2B teams."
                     tags={["Advanced", "Sales"]}
                     price={500}
                     originalPrice={1200}

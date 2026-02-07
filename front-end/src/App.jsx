@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import CourseDetails from "./pages/course/CoursePage";
 import LessonPlayer from "./pages/lesson/LessonPlayer";
 import BuyNow from "./pages/buy/BuyNow";
+import QuizPlayer from "./pages/lesson/QuizPlayer";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/buy-now" element={<BuyNow />} />
 
         <Route path="/lesson-player" element={<LessonPlayer />} />
+        <Route path="/quiz-player" element={<QuizPlayer />} />
       </Routes>
     </BrowserRouter>
   );
