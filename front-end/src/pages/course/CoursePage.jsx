@@ -1,11 +1,13 @@
 import { useState } from "react";
 import CourseOverviewTab from "./CourseOverviewTab";
 import CourseReviewsTab from "./CourseReviewsTab";
-
+import Nav from "../../components/nav/Navbar";
 export default function CoursePage() {
   const [activeTab, setActiveTab] = useState("overview");
 
   return (
+    <>
+    <Nav />
     <div className="min-h-screen bg-gray-100">
 
       {/* HEADER */}
@@ -77,5 +79,6 @@ export default function CoursePage() {
         {activeTab === "reviews" && <CourseReviewsTab />}
       </div>
     </div>
+    </>
   );
 }

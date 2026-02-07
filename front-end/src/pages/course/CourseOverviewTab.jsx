@@ -4,6 +4,7 @@ export default function CourseOverviewTab() {
   const navigate = useNavigate();
 
   return (
+    
     <div className="bg-white rounded-xl shadow-sm p-6">
 
       {/* HEADER */}
