@@ -35,14 +35,7 @@ export default function Signup() {
       localStorage.setItem("role", res.data.role);
 
       toast.success("Signup successful");
-
-      // redirect to login (recommended)
       navigate("/login");
-
-      // OR directly redirect based on role
-      // if (res.data.role === "admin") navigate("/admin/dashboard");
-      // else if (res.data.role === "manager") navigate("/manager/dashboard");
-      // else navigate("/home");
 
     } catch (err) {
       toast.error(err.response?.data?.message || "Signup failed");
@@ -61,6 +54,7 @@ export default function Signup() {
             <input
               name="name"
               type="text"
+              placeholder="Enter your full name"
               value={formData.name}
               onChange={handleChange}
               className="w-full mt-1 border rounded-lg px-3 py-2"
@@ -72,6 +66,7 @@ export default function Signup() {
             <input
               name="email"
               type="email"
+              placeholder="Enter your email address"
               value={formData.email}
               onChange={handleChange}
               className="w-full mt-1 border rounded-lg px-3 py-2"
@@ -83,6 +78,7 @@ export default function Signup() {
             <input
               name="password"
               type="password"
+              placeholder="Create a password"
               value={formData.password}
               onChange={handleChange}
               className="w-full mt-1 border rounded-lg px-3 py-2"
@@ -94,6 +90,7 @@ export default function Signup() {
             <input
               name="confirmPassword"
               type="password"
+              placeholder="Re-enter your password"
               value={formData.confirmPassword}
               onChange={handleChange}
               className="w-full mt-1 border rounded-lg px-3 py-2"

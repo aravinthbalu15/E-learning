@@ -11,7 +11,7 @@ export default function CoursePage() {
     <>
       <Nav
         showBackLink
-        backTo="/home"
+        backTo="/"
         backLabel="Back to My Courses"
         showNavLinks={false}
         searchPlaceholder="Search content..."

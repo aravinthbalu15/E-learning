@@ -61,6 +61,7 @@ export default function Login() {
             <input
               name="email"
               type="email"
+              placeholder="Enter your email address"
               value={formData.email}
               onChange={handleChange}
               className="w-full mt-1 border rounded-lg px-3 py-2"
@@ -72,12 +73,12 @@ export default function Login() {
             <input
               name="password"
               type="password"
+              placeholder="Enter your password"
               value={formData.password}
               onChange={handleChange}
               className="w-full mt-1 border rounded-lg px-3 py-2"
             />
           </div>
-
           <button className="w-full bg-indigo-600 text-white py-2 rounded-lg mt-3 hover:bg-indigo-700 transition">
             SIGN IN
           </button>
