@@ -1,11 +1,19 @@
-function App() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-600">
-        Tailwind CSS is working 🚀
-      </h1>
-    </div>
-  )
-}
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+ import Home from "./pages/home/Home";
 
-export default App
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+       
+        <Route path="/home" element={<Home />} />
+
+      </Routes>
+    </BrowserRouter>
+  );
+}
