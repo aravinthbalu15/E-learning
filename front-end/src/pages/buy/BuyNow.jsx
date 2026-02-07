@@ -43,7 +43,7 @@ export default function BuyNow() {
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </span>
-                    Build enterprise sales playbooks and pipeline strategy.
+                    Master enterprise sales fundamentals and buying committees.
                   </li>
                   <li className="flex gap-3">
                     <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 grid place-items-center">
@@ -60,7 +60,7 @@ export default function BuyNow() {
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </span>
-                    Learn negotiation frameworks used by top-performing teams.
+                    Apply BANT and MEDDICC qualification frameworks.
                   </li>
                   <li className="flex gap-3">
                     <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 grid place-items-center">
@@ -77,7 +77,7 @@ export default function BuyNow() {
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </span>
-                    Templates, CRM checklists, and forecasting dashboards.
+                    Negotiation, objection handling, and value-based selling.
                   </li>
                 </ul>
               </div>
@@ -88,20 +88,22 @@ export default function BuyNow() {
                 </h2>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2 text-sm text-slate-600">
                   <div className="rounded-2xl bg-slate-50 p-4">
-                    <p className="font-semibold text-slate-900">12 Modules</p>
-                    <p className="mt-1">Real-world enterprise sales scenarios.</p>
+                    <p className="font-semibold text-slate-900">4 Lessons</p>
+                    <p className="mt-1">Enterprise-grade sales workflows.</p>
                   </div>
                   <div className="rounded-2xl bg-slate-50 p-4">
-                    <p className="font-semibold text-slate-900">5 Templates</p>
-                    <p className="mt-1">Playbooks and pipeline worksheets.</p>
+                    <p className="font-semibold text-slate-900">Roleplay Pack</p>
+                    <p className="mt-1">Negotiation and objection scenarios.</p>
                   </div>
                   <div className="rounded-2xl bg-slate-50 p-4">
                     <p className="font-semibold text-slate-900">Lifetime Access</p>
                     <p className="mt-1">Revisit updates and bonus sessions.</p>
                   </div>
                   <div className="rounded-2xl bg-slate-50 p-4">
-                    <p className="font-semibold text-slate-900">Certificate</p>
-                    <p className="mt-1">Shareable completion credential.</p>
+                    <p className="font-semibold text-slate-900">
+                      Final Project
+                    </p>
+                    <p className="mt-1">Enterprise sales playbook output.</p>
                   </div>
                 </div>
               </div>

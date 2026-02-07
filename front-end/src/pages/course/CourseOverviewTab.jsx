@@ -6,7 +6,7 @@ export default function CourseOverviewTab() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <h2 className="text-lg font-semibold text-slate-900">4 Lessons</h2>
         <Link
-          to="/lesson-player"
+          to="/lesson-player?lesson=2"
           className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700"
         >
           Continue Learning
@@ -14,7 +14,7 @@ export default function CourseOverviewTab() {
       </div>
 
       <div className="space-y-4">
-        <Link to="/lesson-player" className="block">
+        <Link to="/lesson-player?lesson=1" className="block">
           <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 transition hover:shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex items-start gap-4">
@@ -37,8 +37,10 @@ export default function CourseOverviewTab() {
                     Introduction to Odoo Ecosystem
                   </p>
                   <div className="flex flex-wrap gap-3 text-sm text-slate-600 mt-1">
-                    <span>12 Pages</span>
-                    <span>1 Attachment</span>
+                    <span>Reading + Slides</span>
+                    <span>20 mins</span>
+                    <span>12 Pages PDF</span>
+                    <span>1 Architecture Diagram</span>
                   </div>
                 </div>
               </div>
@@ -49,7 +51,7 @@ export default function CourseOverviewTab() {
           </div>
         </Link>
 
-        <Link to="/lesson-player" className="block">
+        <Link to="/lesson-player?lesson=2" className="block">
           <div className="rounded-2xl border border-indigo-300 bg-white p-5 shadow-sm transition hover:shadow-md">
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
               <div className="flex items-start gap-4">
@@ -68,8 +70,10 @@ export default function CourseOverviewTab() {
                     CRM Module Installation & Setup
                   </p>
                   <div className="flex flex-wrap gap-3 text-sm text-slate-500 mt-1">
+                    <span>Video + Guide</span>
                     <span>15:30 duration</span>
-                    <span>2 Files</span>
+                    <span>Installation checklist</span>
+                    <span>Setup reference doc</span>
                   </div>
                 </div>
               </div>
@@ -102,6 +106,11 @@ export default function CourseOverviewTab() {
                 <p className="font-semibold text-slate-700">
                   Sales Pipeline Automation
                 </p>
+                <div className="flex flex-wrap gap-3 text-xs text-slate-500 mt-1">
+                  <span>Video + Quiz</span>
+                  <span>25 mins</span>
+                  <span>10-question MCQ</span>
+                </div>
               </div>
             </div>
             <span className="text-xs font-semibold text-slate-500">
@@ -133,6 +142,11 @@ export default function CourseOverviewTab() {
                 <p className="font-semibold text-slate-700">
                   Advanced Sales & CRM Automation
                 </p>
+                <div className="flex flex-wrap gap-3 text-xs text-slate-500 mt-1">
+                  <span>Project</span>
+                  <span>40 mins</span>
+                  <span>Mini CRM automation</span>
+                </div>
               </div>
             </div>
             <span className="text-xs font-semibold text-slate-500">Locked</span>
@@ -153,7 +167,7 @@ export default function CourseOverviewTab() {
 
           <div className="flex-1 space-y-4">
             <div>
-              <p className="text-lg font-semibold text-slate-900">Helo World</p>
+              <p className="text-lg font-semibold text-slate-900">Bhuvanasri </p>
               <p className="text-sm text-slate-500">
                 Senior Odoo Architect & Trainer
               </p>

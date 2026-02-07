@@ -34,7 +34,7 @@ export default function Navbar({
           {showBackLink && (
             <Link
               to={backTo}
-              className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900"
             >
               <span className="text-lg">←</span>
               {backLabel}

@@ -5,12 +5,13 @@ import Home from "./pages/home/Home";
 import CourseDetails from "./pages/course/CoursePage";
 import LessonPlayer from "./pages/lesson/LessonPlayer";
 import BuyNow from "./pages/buy/BuyNow";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+import QuizPlayer from "./pages/lesson/QuizPlayer";
+
 export default function App() {
   return (
     <BrowserRouter>
-     <ToastContainer position="top-right" autoClose={3000} />
+ 
       <Routes>
         
         <Route path="/login" element={<Login />} />
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/buy-now" element={<BuyNow />} />
 
         <Route path="/lesson-player" element={<LessonPlayer />} />
+        <Route path="/quiz-player" element={<QuizPlayer />} />
       </Routes>
     </BrowserRouter>
   );
