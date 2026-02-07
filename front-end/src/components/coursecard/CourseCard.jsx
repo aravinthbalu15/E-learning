@@ -1,18 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 export default function CourseCard({ title, progress }) {
+  const navigate = useNavigate();
+
   return (
-    <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+    <div
+      onClick={() => navigate("/course")}
+      className="bg-white rounded-xl shadow-sm overflow-hidden cursor-pointer"
+    >
       <div className="h-40 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
 
       <div className="p-4">
-        <span className="text-xs bg-gray-100 px-2 py-1 rounded">
-          Marketing
-        </span>
-
         <h3 className="font-semibold text-lg mt-2">{title}</h3>
-
-        <p className="text-gray-500 text-sm mt-1">
-          A comprehensive guide to modern digital marketing strategies.
-        </p>
 
         <div className="mt-4">
           <div className="flex justify-between text-xs mb-1">
@@ -28,7 +27,13 @@ export default function CourseCard({ title, progress }) {
           </div>
         </div>
 
-        <button className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate("/course");
+          }}
+          className="mt-4 w-full bg-indigo-600 text-white py-2 rounded-lg"
+        >
           Continue Learning
         </button>
       </div>

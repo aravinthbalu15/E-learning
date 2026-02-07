@@ -1,8 +1,10 @@
 import CourseCard from "../../components/coursecard/CourseCard";
 import ProfileSidebar from "../../components/profilesidebar/ProfileSidebar";
-
+import Nav from "../../components/nav/Navbar"
 export default function Home() {
   return (
+    <>
+    <Nav />
     <div className="min-h-screen bg-gray-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-6">
 
@@ -24,5 +26,6 @@ export default function Home() {
         <ProfileSidebar />
       </div>
     </div>
+    </>
   );
 }
