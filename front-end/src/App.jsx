@@ -5,13 +5,16 @@ import Home from "./pages/home/Home";
 import CourseDetails from "./pages/course/CoursePage";
 import LessonPlayer from "./pages/lesson/LessonPlayer";
 import BuyNow from "./pages/buy/BuyNow";
+
 import QuizPlayer from "./pages/lesson/QuizPlayer";
 
 export default function App() {
   return (
     <BrowserRouter>
+ 
       <Routes>
-        <Route path="/" element={<Login />} />
+        
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
         <Route path="/home" element={<Home />} />
