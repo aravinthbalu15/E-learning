@@ -2,13 +2,11 @@ import jwt from "jsonwebtoken";
 import User from "../models/userModel.js";
 
 /**
- * @desc    Protect routes (JWT verification)
- * @access  Private
+ * Protect routes (JWT verification)
  */
 export const protect = async (req, res, next) => {
   let token;
 
-  // 1. Check token in Authorization header
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
@@ -16,10 +14,8 @@ export const protect = async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1];
 
-      // 2. Verify token
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      // 3. Attach user to request (without password)
       req.user = await User.findById(decoded.id).select("-password");
 
       if (!req.user) {
@@ -35,15 +31,18 @@ export const protect = async (req, res, next) => {
   }
 };
 
-/**
- * @desc    Admin authorization
- * @access  Admin only
- */
-export const isAdmin = (req, res, next) => {
-  if (req.user && req.user.role === "admin") {
-    next();
-  } else {
-    return res.status(403).json({ message: "Admin access only" });
-  }
-};
 
+/**
+ * Role-based authorization
+ */
+export const authorizeRoles = (...roles) => {
+  return (req, res, next) => {
+    // 🔥 extra safety check added
+    if (!req.user || !req.user.role || !roles.includes(req.user.role)) {
+      return res.status(403).json({
+        message: "Access denied. Insufficient permissions",
+      });
+    }
+    next();
+  };
+};

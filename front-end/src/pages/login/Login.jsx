@@ -1,37 +1,80 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { toast } from "react-toastify";
+
+const API = "http://localhost:5001/api/auth/login";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.post(API, {
+        ...formData,
+        email: formData.email.trim()
+      });
+
+      const { token, role } = res.data;
+
+      // Save token
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
+
+      toast.success("Login successful");
+
+      // Role-based redirect
+      if (role === "admin") navigate("/admin/dashboard");
+      else if (role === "manager") navigate("/manager/dashboard");
+      else navigate("/home");
+
+    } catch (err) {
+      toast.error(err.response?.data?.message || "Login failed");
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="bg-white w-full max-w-md rounded-2xl shadow-md p-8 text-center">
-
-        {/* Logo */}
-        <div className="flex justify-center mb-4">
-          <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-white text-xl font-bold">
-            L
-          </div>
-        </div>
 
         <h2 className="text-xl font-semibold mb-6">
           Enterprise Learning Portal
         </h2>
 
-        <form className="space-y-4 text-left">
+        <form className="space-y-4 text-left" onSubmit={handleSubmit}>
           <div>
             <label className="text-sm text-gray-600">Email</label>
             <input
+              name="email"
               type="email"
-              placeholder="Enter your email"
-              className="w-full mt-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full mt-1 border rounded-lg px-3 py-2"
             />
           </div>
 
           <div>
             <label className="text-sm text-gray-600">Password</label>
             <input
+              name="password"
               type="password"
-              placeholder="Enter your password"
-              className="w-full mt-1 border rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 outline-none"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full mt-1 border rounded-lg px-3 py-2"
             />
           </div>
 
@@ -41,15 +84,12 @@ export default function Login() {
         </form>
 
         <div className="text-sm text-gray-500 mt-4">
-          Forget Password?{" "}
+          Don’t have an account?{" "}
           <Link to="/signup" className="text-indigo-600 font-medium">
             Sign Up
           </Link>
         </div>
 
-        <p className="text-xs text-gray-400 mt-6">
-          © 2024 Enterprise Learning Portal. All rights reserved.
-        </p>
       </div>
     </div>
   );

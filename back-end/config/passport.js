@@ -1,7 +1,7 @@
-import passport from "passport"
-import { Strategy as GoogleStrategy } from "passport-google-oauth20"
-import { Strategy as FacebookStrategy } from "passport-facebook"
-import User from "../models/userModel.js"
+import passport from "passport";
+import { Strategy as GoogleStrategy } from "passport-google-oauth20";
+import { Strategy as FacebookStrategy } from "passport-facebook";
+import User from "../models/userModel.js";
 
 /* =======================
    GOOGLE STRATEGY
@@ -15,9 +15,9 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const email = profile.emails[0].value.toLowerCase()
+        const email = profile.emails[0].value.toLowerCase().trim();
 
-        let user = await User.findOne({ email })
+        let user = await User.findOne({ email });
 
         if (!user) {
           user = await User.create({
@@ -25,20 +25,18 @@ passport.use(
             email,
             provider: "google",
             googleId: profile.id,
-            image: {
-              url: profile.photos[0].value,
-              public_id: "google-avatar",
-            },
-          })
+            role: "user",
+          });
         }
 
-        return done(null, user)
+        return done(null, user);
       } catch (error) {
-        return done(error, null)
+        return done(error, null);
       }
     }
   )
-)
+);
+
 
 /* =======================
    FACEBOOK STRATEGY
@@ -49,20 +47,18 @@ passport.use(
       clientID: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
       callbackURL: process.env.FACEBOOK_CALLBACK_URL,
-      profileFields: ["id", "displayName", "emails", "photos"],
+      profileFields: ["id", "displayName", "emails"],
+      enableProof: true, // recommended
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        const email = profile.emails?.[0]?.value?.toLowerCase()
+        const email = profile.emails?.[0]?.value?.toLowerCase()?.trim();
 
         if (!email) {
-          return done(
-            new Error("Facebook account has no email"),
-            null
-          )
+          return done(new Error("Facebook account has no email"), null);
         }
 
-        let user = await User.findOne({ email })
+        let user = await User.findOne({ email });
 
         if (!user) {
           user = await User.create({
@@ -70,17 +66,14 @@ passport.use(
             email,
             provider: "facebook",
             facebookId: profile.id,
-            image: {
-              url: profile.photos?.[0]?.value,
-              public_id: "facebook-avatar",
-            },
-          })
+            role: "user",
+          });
         }
 
-        return done(null, user)
+        return done(null, user);
       } catch (error) {
-        return done(error, null)
+        return done(error, null);
       }
     }
   )
-)
+);

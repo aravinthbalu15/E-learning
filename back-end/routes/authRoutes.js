@@ -1,14 +1,14 @@
-import express from "express"
-import passport from "passport"
-import jwt from "jsonwebtoken"
-import { signup, login } from "../controllers/authController.js"
-import upload from "../middleware/uploadMiddleware.js"
+import express from "express";
+import passport from "passport";
+import jwt from "jsonwebtoken";
+import { signup, login } from "../controllers/authController.js";
 
-const router = express.Router()
+const router = express.Router();
 
 // ---------------- LOCAL AUTH ----------------
-router.post("/signup", upload.single("image"), signup)
-router.post("/login", login)
+router.post("/signup", signup);
+router.post("/login", login);
+
 
 // ---------------- GOOGLE AUTH ----------------
 router.get(
@@ -16,56 +16,55 @@ router.get(
   passport.authenticate("google", {
     scope: ["profile", "email"],
   })
-)
+);
 
 router.get(
   "/google/callback",
   passport.authenticate("google", {
     session: false,
-    failureRedirect: "/login",
+    failureRedirect: `${process.env.FRONTEND_URL}/login`,   // improvement
   }),
   (req, res) => {
-    const user = req.user
+    const user = req.user;
 
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
-    )
+    );
 
- res.redirect(
-  `${process.env.FRONTEND_URL}/oauth-success?token=${token}&role=${user.role}`
-)
-
-
+    res.redirect(
+      `${process.env.FRONTEND_URL}/oauth-success?token=${token}&role=${user.role}`
+    );
   }
-)
+);
+
 
 // ---------------- FACEBOOK AUTH ----------------
 router.get(
   "/facebook",
   passport.authenticate("facebook", { scope: ["email"] })
-)
+);
 
 router.get(
   "/facebook/callback",
   passport.authenticate("facebook", {
     session: false,
-    failureRedirect: "/login",
+    failureRedirect: `${process.env.FRONTEND_URL}/login`,  // improvement
   }),
   (req, res) => {
-    const user = req.user
+    const user = req.user;
 
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
       { expiresIn: "1d" }
-    )
+    );
 
     res.redirect(
-      `http://localhost:5173/oauth-success?token=${token}&role=${user.role}`
-    )
+      `${process.env.FRONTEND_URL}/oauth-success?token=${token}&role=${user.role}`
+    );
   }
-)
+);
 
-export default router
+export default router;

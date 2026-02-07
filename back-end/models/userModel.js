@@ -14,11 +14,12 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
       lowercase: true,
+      trim: true,            // recommended
     },
 
     password: {
       type: String,
-      select: false,     // 🔐 hidden by default
+      select: false,
       required: function () {
         return this.provider === "local";
       },
@@ -32,24 +33,17 @@ const userSchema = new mongoose.Schema(
 
     googleId: {
       type: String,
+      index: true,          // recommended for OAuth speed
     },
 
     facebookId: {
       type: String,
-    },
-
-    image: {
-      url: {
-        type: String,
-      },
-      public_id: {
-        type: String,
-      },
+      index: true,
     },
 
     role: {
       type: String,
-      enum: ["admin", "user"],
+      enum: ["admin", "user", "manager"],
       default: "user",
     },
   },
