@@ -6,9 +6,10 @@ import CourseDetails from "./pages/course/CoursePage";
 import LessonPlayer from "./pages/lesson/LessonPlayer";
 import BuyNow from "./pages/buy/BuyNow";
 import QuizPlayer from "./pages/lesson/QuizPlayer";
-import AdminDashboard from "./admin/components/admin-dash/AdminDashboard";
+import AdminHome from "./admin/components/admin-dash/AdminHome";
 import AdminProtectedRoute from "./admin/admin-auth/AdminProtectedRoute";
-
+import CourseForm from "./admin/pages/course-form/course-form";
+import CourseBuilderPage from "./admin/pages/course-form/course-form";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -28,16 +29,33 @@ export default function App() {
         <Route path="/lesson-player" element={<LessonPlayer />} />
         <Route path="/quiz-player" element={<QuizPlayer />} />
 
+
+
         {/* protected admin route */}
-        <Route
-          path="/admin/dashboard"
-          element={
-            <AdminProtectedRoute>
-              <AdminDashboard />
-            </AdminProtectedRoute>
-          }
-        />
+<Route
+  path="/admin/Admin-home"
+  element={
+    <AdminProtectedRoute>
+      <AdminHome />
+    </AdminProtectedRoute>
+  }
+/>
+
+<Route
+  path="/admin/course/edit/:id"
+  element={
+    <AdminProtectedRoute>
+      <CourseForm />
+    </AdminProtectedRoute>
+  }
+/>
+<Route
+  path="/admin/course/add-content"
+  element={<CourseBuilderPage />}
+/>
+
       </Routes>
+
     </BrowserRouter>
   );
 }

@@ -38,7 +38,7 @@ export default function Login() {
       toast.success("Login successful");
 
       // Role-based redirect
-      if (role === "admin") navigate("/admin/dashboard");
+      if (role === "admin") navigate("/admin/Admin-home");
       else if (role === "manager") navigate("/manager/dashboard");
       else navigate("/");
 
