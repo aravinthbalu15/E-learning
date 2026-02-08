@@ -1,4 +1,5 @@
 import Nav from "../../components/nav/Navbar";
+import Footer from "../../components/Footer";
 
 export default function BuyNow() {
   const currencySymbol = "\u20B9";
@@ -6,6 +7,7 @@ export default function BuyNow() {
   return (
     <>
       <Nav />
+
       <main className="min-h-screen bg-slate-50">
         <div className="max-w-6xl mx-auto px-6 py-10">
           <div className="mb-8">
@@ -16,8 +18,8 @@ export default function BuyNow() {
               Enterprise Sales Strategy
             </h1>
             <p className="text-slate-500 mt-2 max-w-2xl">
-              Deep dive into enterprise-level sales funnels, negotiation tactics,
-              and CRM workflows designed for modern revenue teams.
+              Learn enterprise sales funnels, negotiation tactics, and CRM
+              workflows for modern revenue teams.
             </p>
           </div>
 
@@ -38,13 +40,13 @@ export default function BuyNow() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        aria-hidden="true"
                       >
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </span>
                     Master enterprise sales fundamentals and buying committees.
                   </li>
+
                   <li className="flex gap-3">
                     <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 grid place-items-center">
                       <svg
@@ -55,13 +57,13 @@ export default function BuyNow() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        aria-hidden="true"
                       >
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
                     </span>
-                    Apply BANT and MEDDICC qualification frameworks.
+                    Apply BANT and MEDDICC sales qualification frameworks.
                   </li>
+
                   <li className="flex gap-3">
                     <span className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 grid place-items-center">
                       <svg
@@ -72,7 +74,6 @@ export default function BuyNow() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        aria-hidden="true"
                       >
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
@@ -86,24 +87,28 @@ export default function BuyNow() {
                 <h2 className="text-lg font-semibold text-slate-900">
                   What You Get
                 </h2>
+
                 <div className="mt-4 grid gap-4 sm:grid-cols-2 text-sm text-slate-600">
                   <div className="rounded-2xl bg-slate-50 p-4">
                     <p className="font-semibold text-slate-900">4 Lessons</p>
-                    <p className="mt-1">Enterprise-grade sales workflows.</p>
+                    <p className="mt-1">Enterprise sales workflows.</p>
                   </div>
+
                   <div className="rounded-2xl bg-slate-50 p-4">
                     <p className="font-semibold text-slate-900">Roleplay Pack</p>
                     <p className="mt-1">Negotiation and objection scenarios.</p>
                   </div>
-                  <div className="rounded-2xl bg-slate-50 p-4">
-                    <p className="font-semibold text-slate-900">Lifetime Access</p>
-                    <p className="mt-1">Revisit updates and bonus sessions.</p>
-                  </div>
+
                   <div className="rounded-2xl bg-slate-50 p-4">
                     <p className="font-semibold text-slate-900">
-                      Final Project
+                      Lifetime Access
                     </p>
-                    <p className="mt-1">Enterprise sales playbook output.</p>
+                    <p className="mt-1">Access updates and bonus sessions.</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-slate-50 p-4">
+                    <p className="font-semibold text-slate-900">Final Project</p>
+                    <p className="mt-1">Enterprise sales playbook.</p>
                   </div>
                 </div>
               </div>
@@ -149,8 +154,7 @@ export default function BuyNow() {
                 <div className="mt-4 rounded-2xl bg-slate-50 p-4 text-xs text-slate-500">
                   <p className="font-semibold text-slate-700">Secure Checkout</p>
                   <p className="mt-1">
-                    Payment-ready flow with PCI-compliant processing and instant
-                    course access on purchase.
+                    Secure, PCI-compliant payments with instant course access.
                   </p>
                   <div className="mt-3 flex gap-2">
                     <span className="px-2 py-1 rounded-full bg-white border border-slate-200">
@@ -169,6 +173,8 @@ export default function BuyNow() {
           </div>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }
